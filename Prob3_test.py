@@ -7,7 +7,8 @@ def test_1():
     c = 0.5*np.ones((3,),dtype =np.float64)
     b = np.array([1.5,2,2,1.5],dtype = np.float64)
     x = p3.Problem3(a,d,c,b)
-    assert (x - np.array([ 1.,  1., 1.,  1.]) <1e-5).all()
+    assert ( np.absolute(x - np.array([ 1.,  1., 1.,  1.]) )<1e-5).all()
+    
 
             
 def test_2():
@@ -16,4 +17,5 @@ def test_2():
     c = 0.5*np.ones((99,),dtype =np.float64)
     b = np.array([1.5 if i==0 or i==99 else 2.0 for i in range(100)],dtype = np.float64)
     x = p3.Problem3(a,d,c,b)
-    assert (x - np.ones((100,),dtype=np.float64) <1e-5).all()
+    assert ( np.absolute(x - np.ones((100,),dtype=np.float64) )<1e-5).all()
+    
