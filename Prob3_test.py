@@ -1,9 +1,19 @@
 import Prob3 as p3;
+import numpy as np
 
 def test_1():
-    primes_odd_dict = p3.Problem3(100)
-    assert primes_odd_dict == {1: 2, 3: 5, 5: 11, 7: 17, 9: 23, 11: 31, 13: 41, 15: 47, 17: 59, 19: 67, 21: 73, 23: 83, 25: 97}
-    
+    d = np.ones((4,),dtype =np.float64)
+    a = 0.5*np.ones((3,),dtype =np.float64)
+    c = 0.5*np.ones((3,),dtype =np.float64)
+    b = np.array([1.5,2,2,1.5],dtype = np.float64)
+    x = p3.Problem3(a,d,c,b)
+    assert (x - np.array([ 1.,  1., 1.,  1.]) <1e-5).all()
+
+            
 def test_2():
-    primes_odd_dict = p3.Problem3(50)
-    assert primes_odd_dict == {1: 2, 3: 5, 5: 11, 7: 17, 9: 23, 11: 31, 13: 41, 15: 47}
+    d = np.ones((100,),dtype =np.float64)
+    a = 0.5*np.ones((99,),dtype =np.float64)
+    c = 0.5*np.ones((99,),dtype =np.float64)
+    b = np.array([1.5 if i==0 or i==99 else 2.0 for i in range(100)],dtype = np.float64)
+    x = p3.Problem3(a,d,c,b)
+    assert (x - np.ones((100,),dtype=np.float64) <1e-5).all()
