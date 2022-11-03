@@ -1,5 +1,7 @@
 # Nested List Comprehension
-
+```math
+S = \frac{\sigma}{\sqrt{n}}
+```
 ## 1. Create a matrix whose Lower Traingle and diagonal elements are 1, and the rest are 0.</br >
 
 For Example</br >
