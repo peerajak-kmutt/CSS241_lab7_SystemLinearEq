@@ -8,7 +8,7 @@ def test_1():
     A = np.array(Aa,dtype=np.float64)
     b = np.array(bb, dtype=np.float64)
     x = p1.Problem1(A,b)
-    assert (x == np.array([ 3.,  1., -2.,  1.]).all()
+    assert ( np.absolute(x - np.array([ 3.,  1., -2.,  1.]) )<1e-5).all()
 
 
 
